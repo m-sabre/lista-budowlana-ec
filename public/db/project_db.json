@@ -1,55 +1,73 @@
 {
-  "1.10": [
+  "rooms": [
     {
+      "id": 1.10,
       "name": "Podcien",
-      "KABAElements": [
+      "KABA": [
         {
-          "FB.10": [
-            {
-              "name": "kostka",
+          "FB.10": {
+            "name": "kostka",
+            "params": [
+              {
+                "id": 1,
+                "name": "name0",
+                "stage": "exe0",
+                "done": false,
+                "checked": false
+              },
+              {
+                "id": 2,
+                "name": "name1",
+                "stage": "exe1",
+                "done": false,
+                "checked": false
+              }
+            ]
+          },
+          "FB.11": {
+            "name": "2kostka",
+            "params": [
+              {
+                "id": 1,
+                "name": "2name0",
+                "stage": "2exe0",
+                "done": false,
+                "checked": false
+              },
+              {
+                "id": 2,
+                "name": "2name1",
+                "stage": "2exe1",
+                "done": false,
+                "checked": false
+              }
+            ]
+          }
+        },
+        {
+          "id": 1.11,
+          "name": "NIEPodcien",
+          "KABA": {
+            "FB.10": {
+              "name": "NIEkostka",
               "params": [
                 {
                   "id": 1,
-                  "name": "name",
-                  "stage": "exe",
+                  "name": "name2",
+                  "stage": "exe2",
                   "done": false,
                   "checked": false
                 },
                 {
                   "id": 2,
-                  "name": "name",
-                  "stage": "exe",
+                  "name": "name3",
+                  "stage": "exe3",
                   "done": false,
                   "checked": false
                 }
               ]
             }
-          ],
-          "DE.1.1": [
-            {
-              "name": "sufit",
-              "params": [
-                {
-                  "id": 1,
-                  "name": "name",
-                  "stage": "exe",
-                  "done": false,
-                  "checked": false
-                },
-                {
-                  "id": 2,
-                  "name": "name",
-                  "stage": "exe",
-                  "done": false,
-                  "checked": false
-                }
-              ]
-            }
-          ]
+          }
         }
       ]
     }
-  ],
-  "1.11": [
-  ]
-}

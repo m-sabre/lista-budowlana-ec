@@ -1,4 +1,4 @@
-import {DECREMENT, FETCHING_ERROR, FETCHING_SUCCESS, INCREMENT, IS_FETCHING, MARK_DONE} from "./actions";
+import { FETCHING_ERROR, FETCHING_SUCCESS, IS_FETCHING, MARK_DONE} from "./actions";
 import {combineReducers} from "@reduxjs/toolkit";
 
 
@@ -14,29 +14,15 @@ function tasks(state = {Room: 1, element: 1, done: false}, action) {
     }
 }
 
-const counterInitState = {
-    counter: 0
-}
-
-function counter(state = counterInitState, action) {
-    switch (action.type) {
-        case INCREMENT:
-            return {counter: state.counter + 1}
-        case DECREMENT:
-            return {counter: state.counter - 1}
-        default:
-            return state
-    }
-}
 
 const fetchIniState = {
     isFetching: false,
     error: null,
     data: []
-};
+}
 
-function getData(state = fetchIniState, {type, payload}) {
-    switch (type) { //TODO zamienić na payload.value?
+function getItems(state = fetchIniState, {type, payload}) {
+    switch (type) {
         case IS_FETCHING: {
             return {
                 ...state,
@@ -44,10 +30,12 @@ function getData(state = fetchIniState, {type, payload}) {
             }
         }
         case FETCHING_SUCCESS: {
+            console.log("success getItems",payload);
             return {
                 isFetching: false,
                 error: null,
-                data:payload.response
+                data: payload.data,
+
             }
         }
         case FETCHING_ERROR:{
@@ -64,4 +52,4 @@ function getData(state = fetchIniState, {type, payload}) {
     }
 }
 
-export const rootReducer = combineReducers({tasks, counter, getData})
+export const rootReducer = combineReducers({tasks, getItems})

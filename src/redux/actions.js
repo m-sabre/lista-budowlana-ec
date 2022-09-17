@@ -1,21 +1,8 @@
 const MARK_DONE = "MARK_DONE";
-const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
 const IS_FETCHING = "IS_FETCHING";
 const FETCHING_SUCCESS = "FETCHING_SUCCESS";
 const FETCHING_ERROR = "FETCHING_ERROR";
 
-function increment() {
-    return {
-        type: INCREMENT
-    }
-}
-
-function decrement() {
-    return {
-        type: DECREMENT
-    }
-}
 
 function markDone(value) {
     return {
@@ -29,18 +16,37 @@ function markDone(value) {
 function isFetching() {
     return {
         type: IS_FETCHING,
-        payload: {}
+
     }
 }
 
-function fetchingSuccess() {
-    return {}
+function fetchingSuccess(value) {
+    return {
+        type: FETCHING_SUCCESS,
+        payload:{
+            data:[value.data]
+        }
+
+    }
 
 }
 
-function fetchingError() {
-    return {}
+function fetchingError(error) {
+    return {
+        type: FETCHING_ERROR,
+        payload: {error}
+
+    }
 }
 
 
-export {MARK_DONE, INCREMENT, DECREMENT, IS_FETCHING, FETCHING_SUCCESS, FETCHING_ERROR, decrement, markDone, increment}
+export {
+    MARK_DONE,
+    IS_FETCHING,
+    FETCHING_SUCCESS,
+    FETCHING_ERROR,
+    markDone,
+    isFetching,
+    fetchingError,
+    fetchingSuccess
+}
