@@ -1,4 +1,4 @@
-import { FETCHING_ERROR, FETCHING_SUCCESS, IS_FETCHING, MARK_DONE} from "./actions";
+import {FETCHING_ERROR, FETCHING_SUCCESS, IS_FETCHING, MARK_DONE, TOGGLE} from "./actions";
 import {combineReducers} from "@reduxjs/toolkit";
 
 
@@ -9,6 +9,15 @@ function tasks(state = {Room: 1, element: 1, done: false}, action) {
                 ...state,
                 done: action.payload
             } //TODO do poprawy stan początkowy i obiekt action.done ma przyjąć wartość boolean
+        default:
+            return state
+    }
+}
+
+function menuState(state={open:false}, {type,payload}) {
+    switch (type) {
+        case TOGGLE:
+            return {open: payload.open}
         default:
             return state
     }
@@ -52,4 +61,4 @@ function getItems(state = fetchIniState, {type, payload}) {
     }
 }
 
-export const rootReducer = combineReducers({tasks, getItems})
+export const rootReducer = combineReducers({menuState, getItems})

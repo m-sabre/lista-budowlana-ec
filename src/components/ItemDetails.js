@@ -1,8 +1,8 @@
 import {Typography} from "@mui/material";
 import ItemStatus from "./ItemStatus";
+import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 
-
-export default function ItemsTable({roomItems}) {
+export default function ItemDetails({roomItems}) {
 
     return (
         <>
@@ -13,7 +13,7 @@ export default function ItemsTable({roomItems}) {
                         <th><Typography variant="body2" gutterBottom>{itemParams.id}</Typography>
                         </th>
                         <td><Typography variant="body2" gutterBottom>{itemParams.name}</Typography>
-                        </td>
+                            </td>
                         <td>
                             <Typography variant="body2" gutterBottom>
                                 {itemParams.stage}
@@ -21,10 +21,7 @@ export default function ItemsTable({roomItems}) {
                         </td>
                         <td>
                             <ItemStatus/>
-
                         </td>
-
-
                     </tr>
                 )
             })}

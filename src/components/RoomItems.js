@@ -1,10 +1,17 @@
 import {
     Accordion,
-    AccordionSummary,
+    AccordionSummary, Badge,
     Grid,
 } from "@mui/material";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import BuildCircleIcon from '@mui/icons-material/BuildCircle';
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
 
-import ItemsTable from "./ItemsTable";
+
+import ItemDetails from "./ItemDetails";
+import {pink} from "@mui/material/colors";
+
 
 export default function RoomItems({roomData}) {
 
@@ -19,14 +26,31 @@ export default function RoomItems({roomData}) {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header">
                                 <Grid container spacing={0.5}>
-                                    <Grid xs={1} sx={{ color: "#b2a429"}}>
+                                    <Grid xs={1} sx={{color: "#b2a429"}}>
                                         {roomItems.itemSymbol}
                                     </Grid>
-                                    <Grid xs={6}>
+                                    <Grid xs={3}>
                                         <h6 style={{color: "#1c54b2"}}>
                                             {roomItems.itemName}
                                         </h6>
                                     </Grid>
+                                    <Grid xs={2}>
+                                        <Badge badgeContent={4} color="primary" overlap="circular" showZero>
+                                            <CheckCircleIcon color="success" style={{minWidth: '40px'}}/>
+                                        </Badge>
+                                        <Badge badgeContent={4} color="primary" overlap="circular" showZero>
+                                            <RemoveCircleIcon color="disabled" style={{minWidth: '40px'}}/>
+                                        </Badge>
+
+                                        <Badge badgeContent={4} color="primary" overlap="circular" showZero>
+                                            <CancelIcon sx={{color: pink[800]}} style={{minWidth: '40px'}}/>
+                                        </Badge>
+                                        <Badge badgeContent={4} color="primary" overlap="circular" showZero>
+                                            <BuildCircleIcon color="warning" style={{minWidth: '40px'}}/>
+                                        </Badge>
+
+                                    </Grid>
+
                                 </Grid>
 
                             </AccordionSummary>
@@ -41,7 +65,7 @@ export default function RoomItems({roomData}) {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <ItemsTable roomItems={roomItems}/>
+                                    <ItemDetails roomItems={roomItems}/>
                                     </tbody>
                                     <tfoot>
                                     <tr>
