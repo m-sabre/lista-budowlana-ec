@@ -18,7 +18,7 @@ function App() {
     //TODO 1. Posprzątać komponenty: APP, DRAWER MENU, ROOM LIST
     //TODO 2. Inna Tabelka - MUI z detalami - "rozsuwana"
     //TODO 3. Zapisywanie od Json
-    //TODO - działające ikonki, navbar na górze, hamburger zmiana grafiki, ikonki w nagłówku w linii zawsze, ikonki w tbelce jako radio, w main legenda i opis działania apki
+    //TODO - działające ikonki, navbar na górze, hamburger zmiana grafiki, ikonki w nagłówku w linii zawsze, ikonki w tabelce jako radio, w main legenda i opis działania apki
 
     //TODO - finał - działające tworzenie nowego pliku json, tworzenie raportu do pobrania.
 
@@ -53,7 +53,7 @@ function App() {
                     <DrawerMenu roomData={roomData}/>
                 </Grid>
 
-                <Grid xs={12} md={12} alignItems="center">
+                <Grid xs="auto" alignItems="center">
 
                     <Outlet />
 

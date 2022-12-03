@@ -2,15 +2,18 @@ const MARK_DONE = "MARK_DONE";
 const IS_FETCHING = "IS_FETCHING";
 const FETCHING_SUCCESS = "FETCHING_SUCCESS";
 const FETCHING_ERROR = "FETCHING_ERROR";
-const TOGGLE="TOGGLE";
+const DRAWER_TOGGLE = "DRAWER_TOGGLE";
 
 
 
-function menuToggle(value){
-    return{
-        type: TOGGLE,
-        payload:{
-            open:value
+
+
+
+function menuToggle(value) {
+    return {
+        type: DRAWER_TOGGLE,
+        payload: {
+            open: value
         }
     }
 }
@@ -35,8 +38,8 @@ function isFetching() {
 function fetchingSuccess(value) {
     return {
         type: FETCHING_SUCCESS,
-        payload:{
-            data:[value.data]
+        payload: {
+            data: [value.data]
         }
 
     }
@@ -57,10 +60,10 @@ export {
     IS_FETCHING,
     FETCHING_SUCCESS,
     FETCHING_ERROR,
-    TOGGLE,
+    DRAWER_TOGGLE,
     menuToggle,
     markDone,
     isFetching,
     fetchingError,
-    fetchingSuccess
+    fetchingSuccess,
 }

@@ -1,4 +1,4 @@
-import {FETCHING_ERROR, FETCHING_SUCCESS, IS_FETCHING, MARK_DONE, TOGGLE} from "./actions";
+import {DRAWER_TOGGLE, FETCHING_ERROR, FETCHING_SUCCESS, IS_FETCHING, MARK_DONE} from "./actions";
 import {combineReducers} from "@reduxjs/toolkit";
 
 
@@ -16,12 +16,14 @@ function tasks(state = {Room: 1, element: 1, done: false}, action) {
 
 function menuState(state={open:false}, {type,payload}) {
     switch (type) {
-        case TOGGLE:
+        case DRAWER_TOGGLE:
             return {open: payload.open}
         default:
             return state
     }
 }
+
+
 
 
 const fetchIniState = {

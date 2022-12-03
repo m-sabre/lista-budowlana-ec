@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {Box, Button, Drawer, List, ListItem, ListItemText} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {menuToggle} from "../redux/actions";
@@ -46,10 +45,6 @@ export default function DrawerMenu({roomData}) {
         )
 
     }
-
-
-    console.log("drawerToggle", drawerToggle);
-
 
     return (
         <>
