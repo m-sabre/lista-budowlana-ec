@@ -14,20 +14,12 @@ export default function RoomList({roomData}) {
         console.log(filteredRoom);
 
 
-
-
     return (
         <>
             <p>ID: {roomId}</p>
             {filteredRoom.map(({...roomData}) => {
                 return (
                     <ul key={roomData.roomId}>
-                        {/*<div className=" columns is-variable">*/}
-                        {/*    <div style={{height: "50px"}}*/}
-                        {/*         className="column is-1 tag is-warning is-medium ">{roomData.roomId}</div>*/}
-                        {/*    <div style={{height: "50px"}}*/}
-                        {/*         className="column is-11 tag is-info is-large ">{roomData.roomName}</div>*/}
-                        {/*</div>*/}
                         <RoomItems key={roomData.roomId} roomData={roomData}/>
                     </ul>
                 )

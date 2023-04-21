@@ -14,43 +14,37 @@
               "id": 1,
               "name": "Wymiar Kostki 16x24x8",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 2,
               "name": "Kostka antracytowa piaskowanie antracytowe",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 3,
               "name": "Krawędź bez fazy lub z mikrofazą",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 4,
               "name": "Ułożenie na warstwie żwirowej",
               "stage": "Surowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 5,
               "name": "Ułożenie z przesunięciem 1/3 kostki",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 6,
               "name": "Spadek do wiatrołapu 1,5-2%",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             }
           ],
           "notes": [
@@ -67,43 +61,37 @@
               "id": 1,
               "name": "Name 1",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 2,
               "name": "Name 2",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 3,
               "name": "Name 3",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 4,
               "name": "Name 4",
               "stage": "Surowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 5,
               "name": "Name 5",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 6,
               "name": "Name 6",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             }
           ],
           "notes": [
@@ -120,43 +108,37 @@
               "id": 1,
               "name": "Wymiar 625x625(600x600) z systemem zacisków",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 1,
               "name": "Kostka antracytowa piaskowanie antracytowe",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 1,
               "name": "Krawędź bez fazy lub z mikrofazą",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 1,
               "name": "Ułożenie na warstwie żwirowej",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 1,
               "name": "Ułożenie z przesunięciem 1/3 kostki",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "id": 1,
               "name": "Spadek do wiatrołapu 1,5-2%",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             }
           ],
           "notes": [
@@ -178,38 +160,32 @@
             {
               "name": "TEST",
               "stage": "Drzwi",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "name": "Kostka antracytowa piaskowanie antracytowe",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "name": "Krawędź bez fazy lub z mikrofazą",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "name": "Ułożenie na warstwie żwirowej",
               "stage": "Surowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "name": "Ułożenie z przesunięciem 1/3 kostki",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Nie dotyczy"
             },
             {
               "name": "Spadek do wiatrołapu 1,5-2%",
               "stage": "Wykończeniowy",
-              "done": false,
-              "flag": ""
+              "flag": "Wykonano"
             }
           ],
           "notes": [

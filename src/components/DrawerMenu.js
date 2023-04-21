@@ -26,7 +26,6 @@ export default function DrawerMenu({roomData}) {
                     {roomData.length ? (
                         <List>
                             <Link to="/">Main</Link>
-                            {/*<Link to="/01.01">01.01</Link>*/}
                             {roomData.map((roomData) => {
                                 return (
                                     <ListItem key={roomData.roomId} component={Link} to={"/"+roomData.roomId}>
@@ -55,14 +54,6 @@ export default function DrawerMenu({roomData}) {
                     {list(roomData)}
 
                 </Drawer>
-
-                    {/*{roomData.map((roomData) => {*/}
-                    {/*    console.log(roomData.roomId);*/}
-                    {/*    return (*/}
-                    {/*        <Route path={"/" + roomData.roomId} element={<RoomList />}/>*/}
-                    {/*    )*/}
-                    {/*})}*/}
-
 
         </>
     )

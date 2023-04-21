@@ -1,7 +1,14 @@
 import {FormControl, FormControlLabel, Radio, RadioGroup} from "@mui/material";
 import {green, orange, pink} from "@mui/material/colors";
+import {useState} from "react";
 
 export default function ItemStatus() {
+
+    const [value,setValue]=useState("Nie dotyczy")
+
+    const handleChange=(event)=>{
+        setValue(event.target.value)
+    }
 
     return (
         <>
@@ -10,7 +17,9 @@ export default function ItemStatus() {
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
                     name="row-radio-buttons-group"
-                    color="primary">
+                    color="primary"
+                    value={value}
+                    onChange={handleChange}>
                     <FormControlLabel value="Wykonano"
                                       control={<Radio sx={{color: green[800],
                                           '& .MuiSvgIcon-root': {fontSize: 18,},

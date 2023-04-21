@@ -7,11 +7,18 @@ import {fetchData} from "./redux/fetchData";
 import {useEffect, useState} from "react";
 import 'bulma-extensions';
 import 'bulma-switch'
-import { Grid } from "@mui/material";
+import {createTheme, Grid, ThemeProvider} from "@mui/material";
 import DrawerMenu from "./components/DrawerMenu";
 import Main from "./components/Main";
-import { Outlet, Route, Routes} from "react-router-dom";
+import {Outlet, Route, Routes} from "react-router-dom";
 import RoomList from "./components/RoomList";
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
 
 function App() {
 
@@ -44,47 +51,32 @@ function App() {
 
     }, [dispatch])
 
-    // justifyContent="center"
+
     return (
         <>
-
-                <Grid xs={12} md={12} alignItems="center">
-                    {/*<NavBar />*/}
-                    <DrawerMenu roomData={roomData}/>
-                </Grid>
-
-                <Grid xs="auto" alignItems="center">
-
-                    <Outlet />
-
-                    <Routes>
-                        <Route path="/" element={<Main/>}>Main</Route>
-                        <Route path="/:roomId" element={<RoomList roomData={roomData}/>}/>
-                    </Routes>
-
-                    {/*{data.length ?*/}
-                    {/*    <div className="content block">*/}
-                    {/*        {roomData.map(({...roomData}) => {*/}
-                    {/*            return (*/}
-                    {/*                <ul key={roomData.roomId}>*/}
-                    {/*                    <div className=" columns is-variable">*/}
-                    {/*                        <div style={{height: "50px"}}*/}
-                    {/*                             className="column is-1 tag is-warning is-medium ">{roomData.roomId}</div>*/}
-                    {/*                        <div style={{height: "50px"}}*/}
-                    {/*                             className="column is-11 tag is-info is-large ">{roomData.roomName}</div>*/}
-                    {/*                    </div>*/}
-                    {/*                    <RoomItems key={roomData.id} roomData={roomData}/>*/}
-
-                    {/*                </ul>*/}
-                    {/*            )*/}
-                    {/*        })}*/}
-                    {/*    </div>*/}
-                    {/*    : <p1>"Ładowanie Tabeli"</p1>*/}
-                    {/*}*/}
-                </Grid>
-
+                <DrawerMenu roomData={roomData}/>
+                <Outlet/>
+                <Routes>
+                    <Route path="/" element={<Main/>}>Main</Route>
+                    <Route path="/:roomId" element={<RoomList roomData={roomData}/>}/>
+                </Routes>
         </>
     );
 }
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyBUw35rlR6NWVCZW4F9fUZgV2K5T7vZCMc",
+    authDomain: "checklista-budowlana.firebaseapp.com",
+    projectId: "checklista-budowlana",
+    storageBucket: "checklista-budowlana.appspot.com",
+    messagingSenderId: "114082480269",
+    appId: "1:114082480269:web:df0b87bf046f6a0d80e2c4",
+    measurementId: "G-P2KKXRHMF6"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 export default App;
