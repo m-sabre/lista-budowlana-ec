@@ -1,60 +1,47 @@
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
-export default function NavBar(){
-
-    return(
-        <>
-            <nav className="navbar" role="navigation" aria-label="main navigation">
-                <div className="navbar-brand">
-                    <a className="navbar-item" >
-                        {/*<img src="../../public/ECLOFOGRAY.png" width="148" height="147"/> */}
-                        EC </a>
-                    <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false"
-                       data-target="navbarBasicExample">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
-                </div>
-
-                <div id="navbarBasicExample" className="navbar-menu">
-                    <div className="navbar-start">
-                        <a className="navbar-item">
-                            Nowy Projekt
-                        </a>
+import DrawerMenu from "./DrawerMenu";
+import AppMenu from "./AppMenu";
+import {createTheme} from '@mui/material/styles';
+import {Avatar, ThemeProvider} from "@mui/material";
 
 
-                        <div className="navbar-item has-dropdown is-hoverable">
-                            <a className="navbar-link">
-                                Wybór projektu
-                            </a>
+export default function NavBar({roomData}) {
 
-                            <div className="navbar-dropdown">
-                                <a className="navbar-item">
-                                    Lista do uzupełnienia
-                                </a>
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#c62828',
+            },
+            secondary: {
+                main: '#d81b60',
+            },
+        },
+    });
 
-                                <hr className="navbar-divider"/>
-                                    <a className="navbar-item">
-                                       Opcja
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
+    return (
+        <Box sx={{flexGrow: 2}}>
+            <ThemeProvider theme={theme}>
+                <AppBar position="static">
+                    <Toolbar>
+                        <DrawerMenu roomData={roomData}></DrawerMenu>
 
-                    <div className="navbar-end">
-                        <div className="navbar-item">
-                            <div className="buttons">
-                                <a className="button is-primary">
-                                    <strong>Zapisz</strong>
-                                </a>
-                                <a className="button is-light">
-                                    Wygeneruj Raport
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </>
-    )
+                        {/*<Avatar alt="EC" src={require('../ECLOGOGRAY.png')} sx={{ width: 36, height: 36 }}/>*/}
+                        {/*<img src={require('../ECLOGOGRAY.png')} style={{width: "2.5%", height: "2.5%"}} alt="EC"></img>*/}
+                        <Typography variant="h6" component="div" sx={{flexGrow: 1}} style={{marginLeft: '.5rem'}}>
+                            EC Lista AB
+                        </Typography>
+
+                        <AppMenu/>
+                        <Button color="inherit">Zapisz</Button>
+                    </Toolbar>
+                </AppBar>
+            </ThemeProvider>
+        </Box>
+    );
 }

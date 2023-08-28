@@ -1,0 +1,16 @@
+{
+  "rooms": [
+    {
+      "id":"01.01",
+      "name": "Podcień",
+      "height": 4.45,
+      "elements": ["FB10","DE1.1","FLH1","RS25","MA5","UW1","UW5"]
+    },
+    {
+      "id": "01.02",
+      "name": "Wiatrołap",
+      "height": 4.45,
+      "elements": ["RES1","FB1-FS1","BS4","WB6","AT1","RS28","DE1.1","RS1"]
+    }
+  ]
+}

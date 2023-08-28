@@ -1,8 +1,26 @@
-import {fetchingError, fetchingSuccess, isFetching} from "./actions";
+import {fetchDataFailure, fetchDataSuccess, fetchingError, fetchingSuccess, isFetching} from "./actions";
 import axios from "axios";
+import {projectDatabase} from "../firebase/config";
+import { onValue, get, ref } from 'firebase/database';
 
 
-//TODO ASYNC
+
+
+
+export const fetchDatabaseData = () => async (dispatch) => {
+    try {
+        const dbRef = ref(projectDatabase,"/");
+        onValue(dbRef, (snapshot) => {
+            dispatch(fetchDataSuccess(snapshot))
+            console.log(snapshot,"fetchDB");
+        })
+    } catch (error) {
+        dispatch(fetchDataFailure(error))
+        console.log(error);
+
+    }
+}
+
 export function fetchData() {
     return async dispatch => {
         function onSuccess(data) {
@@ -20,7 +38,6 @@ export function fetchData() {
         try {
             dispatch(isFetching())
             const success = await axios.get("../db/db.json")
-            console.log("Success Try", success);
             return onSuccess(success)
         } catch (error) {
             return onError(error)
@@ -28,4 +45,7 @@ export function fetchData() {
 
 
     }
+
+
 }
+

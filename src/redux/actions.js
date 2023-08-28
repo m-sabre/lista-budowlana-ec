@@ -1,12 +1,30 @@
+import {projectDatabase} from "../firebase/config";
+
 const MARK_DONE = "MARK_DONE";
 const IS_FETCHING = "IS_FETCHING";
 const FETCHING_SUCCESS = "FETCHING_SUCCESS";
 const FETCHING_ERROR = "FETCHING_ERROR";
 const DRAWER_TOGGLE = "DRAWER_TOGGLE";
+const FETCH_DATA_SUCCESS ="FETCH_DATA_SUCCESS";
+const FETCH_DATA_FAILURE="FETCH_DATA_FAILURE"
 
 
 
 
+
+function fetchDataSuccess(snapshot){
+    return {
+        type:FETCH_DATA_SUCCESS,
+        payload:snapshot.val()
+    }
+}
+
+function fetchDataFailure (error){
+    return{
+        type:FETCH_DATA_FAILURE,
+        payload:error
+    }
+}
 
 
 function menuToggle(value) {
@@ -61,9 +79,13 @@ export {
     FETCHING_SUCCESS,
     FETCHING_ERROR,
     DRAWER_TOGGLE,
+    FETCH_DATA_SUCCESS,
+    FETCH_DATA_FAILURE,
     menuToggle,
     markDone,
     isFetching,
     fetchingError,
     fetchingSuccess,
+    fetchDataSuccess,
+    fetchDataFailure
 }

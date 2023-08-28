@@ -1,6 +1,25 @@
-import {DRAWER_TOGGLE, FETCHING_ERROR, FETCHING_SUCCESS, IS_FETCHING, MARK_DONE} from "./actions";
+import {
+    DRAWER_TOGGLE,
+    FETCHING_ERROR,
+    FETCHING_SUCCESS,
+    IS_FETCHING,
+    MARK_DONE,
+    FETCH_DATA_SUCCESS,
+    FETCH_DATA_FAILURE
+} from "./actions";
 import {combineReducers} from "@reduxjs/toolkit";
 
+
+const dataReducer = (state = fetchIniState, {type, payload}) => {
+    switch (type) {
+        case FETCH_DATA_SUCCESS:
+            return {...state, data: payload, isFetching: false}
+        case FETCH_DATA_FAILURE:
+            return {...state, error: payload, isFetching: false}
+        default:
+            return state;
+    }
+}
 
 function tasks(state = {Room: 1, element: 1, done: false}, action) {
     switch (action.type) {
@@ -14,7 +33,7 @@ function tasks(state = {Room: 1, element: 1, done: false}, action) {
     }
 }
 
-function menuState(state={open:false}, {type,payload}) {
+function menuState(state = {open: false}, {type, payload}) {
     switch (type) {
         case DRAWER_TOGGLE:
             return {open: payload.open}
@@ -24,12 +43,10 @@ function menuState(state={open:false}, {type,payload}) {
 }
 
 
-
-
 const fetchIniState = {
     isFetching: false,
     error: null,
-    data: []
+    data: null
 }
 
 function getItems(state = fetchIniState, {type, payload}) {
@@ -41,7 +58,6 @@ function getItems(state = fetchIniState, {type, payload}) {
             }
         }
         case FETCHING_SUCCESS: {
-            console.log("success getItems",payload);
             return {
                 isFetching: false,
                 error: null,
@@ -49,11 +65,11 @@ function getItems(state = fetchIniState, {type, payload}) {
 
             }
         }
-        case FETCHING_ERROR:{
-            return{
+        case FETCHING_ERROR: {
+            return {
                 isFetching: false,
                 error: payload.error,
-                data:[],
+                data: [],
             }
         }
         default: {
@@ -63,4 +79,4 @@ function getItems(state = fetchIniState, {type, payload}) {
     }
 }
 
-export const rootReducer = combineReducers({menuState, getItems})
+export const rootReducer = combineReducers({data:dataReducer, menuState,getItems})

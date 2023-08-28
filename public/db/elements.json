@@ -1,0 +1,481 @@
+{
+  "elements": [
+    {
+      "id": "FB10",
+      "name": "Kostka betonowa z powłoką teflonową",
+      "type": "Posadzka",
+      "statusSummary": 0,
+      "checkList": [{
+        "id": 1,
+        "name": "Wymiar kostki:16x24x8",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },
+        {
+          "id": 2,
+          "name": "Kostka antracytowa, piaskowanie antracytowe",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+        },
+        {
+          "id": 3,
+          "name": "Krawędzie bez fazy lub z mikrofazą",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 4,
+          "name": "Ułożenie na warstwie żwirowej (ziarnistość 1-5 mm) 4cm",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 5,
+          "name": "Ułożenie z przesunięciem 1/3 kostki",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 6,
+          "name": "Spadek od wiatrołapu 1,5-2%",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        }
+      ],
+      "optionalList": [{
+        "id": 1,
+        "name": "wymiar kostki 30x30 cm do 40x40 cm ",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },{
+        "id": 2,
+        "name": "Udokumentowanie odporności na ściskanie wielkości 60 N/mm2 (świadectwo indywidualne)",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },{
+        "id": 3,
+        "name": " powłoka odporna na działanie myjek wysokociśnieniowych z odl. 30 cm",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      }
+      ]
+    },
+    {
+      "id": "DE1.1",
+      "name": "Sufit kasetonowy z blachy stalowej",
+      "type": "Sufit",
+      "statusSummary": 0,
+      "checkList": [{
+        "id": 1,
+        "name": "625x625 (600x600) z systemem zacisków",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },
+        {
+          "id": 2,
+          "name": "Kasetony zaciskowe z blachy stalowej ocynkowanej ogniowo",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 3,
+          "name": "Konstrukcja nośna ukryta, nierdzewna z regulacją wysokości",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 4,
+          "name": "Zamknięte kasetony bez perforacji",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 5,
+          "name": "RAL 9010 (biały) - lakierowany proszkowo",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 6,
+          "name": "Styk sufitu ze ścianą zabezpieczony kątownikiem L25",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 7,
+          "name": "Kątownik ocynkowany, malowany RAL9010, rogi ścięte pod kątem",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 8,
+          "name": "Płyty przylegające do kąta brzegowego nie mogą być wyjmowane bezpośrednio w dół",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        }
+      ],
+      "optionalList": []
+    }
+  ,
+    {
+      "id": "FLH1",
+      "name": "Uchwyt na flagi",
+      "type": "Wyposażenie",
+      "statusSummary": 0,
+      "checkList": [{
+        "id": 1,
+        "name": "Dwa podwójne uchwyty",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },
+        {
+          "id": 2,
+          "name": "Podstawa z ocynkowanej blachy: 150x200x2mm",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 3,
+          "name": "Tuleje o śr. wew. 35mm, dł. 200mm, nachylenie 30st do poziomu",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 4,
+          "name": "Tuleja ze śrubą motylkową blokującą drzewiec w odl. 5 cm od przedniej końcówki rury",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 5,
+          "name": "Kolor: V2A - stal szlachetna wzgl. wg danych Kaufland",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        }
+      ],
+      "optionalList": []
+    },
+    {
+      "id": "RS25",
+      "name": "Odbój na słupie",
+      "type": "Odbój",
+      "statusSummary": 0,
+      "checkList": [{
+        "id": 1,
+        "name": "Blacha nierdzewna ze stali szlachetnej gr.  1,5-2 mm",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },
+        {
+          "id": 2,
+          "name": "Półskorupy z zakładką ok. 2 cm na końcach",
+          "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+        },
+        {
+          "id": 3,
+          "name": "Montaż na klej (bez nitów i śrub) do metalu i zgrzewania punktowego",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 4,
+          "name": "Wys. górnej krawędzi od gotowej podłogi  +1,20m",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 5,
+          "name": "Górna spoina wypełniona masą trwale elastyczną",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 6,
+          "name": "Kolor: V2A, szlif gładki, ziarno 240",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        }
+      ],
+      "optionalList": [ ]
+    },
+    {
+      "id": "",
+      "name": "",
+      "type": "",
+      "statusSummary": 0,
+      "checkList": [{
+        "id": 1,
+        "name": "Słupek z ocynkowanej rury stalowej , gr. blachy 2 mm",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },
+        {
+          "id": 2,
+          "name": "Średnica 18-20cm, zamknięta płyta czołowa",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 3,
+          "name": "Łączna dł. 1,2m (h=0,8m ponad poziom kostki)",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 4,
+          "name": "Kolor: DB703, mat (powłoka malarska -mika żelazna)",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 5,
+          "name": "Opcja I - wyjmowane z zamkiem z wkładką cylindryczną lub na klucz trójkątny",
+          "status":[{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 6,
+          "name": "Opcja II (zabezp. Przeciwkolizyjne) - słupek zabetonowany i zakotwiony za pomocą kolców poprzecznych w gruncie, wewnątrz zalane C12/15",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 7,
+          "name": "Alternatywnie: ławka gabion ",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 8,
+          "name": "Siatka metalowa - Drut gr. min. 4mm",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 9,
+          "name": "Oczko 50x50mm do 50x100 mm",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 10,
+          "name": "Wypełnienie - szary tłuczeń kamienny układany ręcznie",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 11,
+          "name": "Siedzisko z szarego tworzywa gr. 4 cm i szer. 12cm (niedemontowalne)",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        }
+      ],
+      "optionalList": []
+    },
+
+    {
+      "id": "",
+      "name": "",
+      "statusSummary": 0,
+      "checkList": [{
+        "id": 1,
+        "name": "",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },
+        {
+          "id": 2,
+          "name": "",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 3,
+          "name": "",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 4,
+          "name": "",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 5,
+          "name": "",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        },
+        {
+          "id": 6,
+          "name": "",
+          "status": [{
+            "projectID":"",
+            "status": "",
+            "date": ""
+          }]
+        }
+      ],
+      "optionalList": [{
+        "id": 1,
+        "name": "",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },{
+        "id": 2,
+        "name": "",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      },{
+        "id": 3,
+        "name": "",
+        "status": [{
+          "projectID":"",
+          "status": "",
+          "date": ""
+        }]
+      }
+      ]
+    }
+  ]
+}
