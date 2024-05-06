@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import {projectDatabase} from "../firebase/config"; 
+import React, {useState} from 'react';
+import {projectDatabase} from "../firebase/config";
+import {ref, set} from 'firebase/database'
+
 
 const CsvUploader = () => {
     const [file, setFile] = useState(null);
@@ -21,8 +23,8 @@ const CsvUploader = () => {
             const parsedData = parseCsv(csvData);
 
             // Write data to Firebase database
-            const dbRef = projectDatabase.ref('csvData');
-            await dbRef.set(parsedData);
+            const dbRef = ref(projectDatabase,'csvData');
+            await set(dbRef,parsedData);
 
             console.log('Data uploaded successfully');
         };
@@ -31,27 +33,35 @@ const CsvUploader = () => {
     };
 
     const parseCsv = (csvData) => {
-        // Implement your CSV parsing logic here
-        // Example: Convert CSV string to array of objects
         const lines = csvData.split('\n');
-        const headers = lines[0].split(',');
+        const headers = lines[0].split(',').map(header => encodeURIComponent(header.trim())).filter(header => header !== ''); // Encode and remove empty headers
         const data = [];
+
         for (let i = 1; i < lines.length; i++) {
             const values = lines[i].split(',');
             const entry = {};
+
             for (let j = 0; j < headers.length; j++) {
-                entry[headers[j]] = values[j];
+                const key = headers[j];
+
+                entry[key] = values[j] ? values[j].trim() : ''; // Handle empty values
             }
+
             data.push(entry);
         }
+
         return data;
     };
 
+
     return (
-        <div>
-            <input type="file" onChange={handleFileChange} />
-            <button onClick={handleUpload}>Upload CSV</button>
-        </div>
+        <>
+            <div>
+                <input type="file" onChange={handleFileChange}/>
+                <button onClick={handleUpload}>Upload CSV</button>
+            </div>
+        </>
+
     );
 };
 

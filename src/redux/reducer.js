@@ -10,16 +10,21 @@ import {
 import {combineReducers} from "@reduxjs/toolkit";
 
 
-const dataReducer = (state = fetchIniState, {type, payload}) => {
-    switch (type) {
-        case FETCH_DATA_SUCCESS:
-            return {...state, data: payload, isFetching: false}
-        case FETCH_DATA_FAILURE:
-            return {...state, error: payload, isFetching: false}
+const initialState = {
+    data: null,
+    error: null,
+};
+
+const dataReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case 'FETCH_DATA_SUCCESS':
+            return { ...state, data: action.payload, error: null };
+        case 'FETCH_DATA_FAILURE':
+            return { ...state, error: action.payload };
         default:
             return state;
     }
-}
+};
 
 function tasks(state = {Room: 1, element: 1, done: false}, action) {
     switch (action.type) {
@@ -78,5 +83,7 @@ function getItems(state = fetchIniState, {type, payload}) {
 
     }
 }
+
+
 
 export const rootReducer = combineReducers({data:dataReducer, menuState,getItems})

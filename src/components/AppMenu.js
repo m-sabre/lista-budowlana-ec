@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 export default function AppMenu() {
     const [anchorEl, setAnchorEl] = useState();
@@ -38,7 +39,7 @@ export default function AppMenu() {
                 <MenuItem onClick={handleClose}>Wybierz Projekt</MenuItem>
                 <MenuItem onClick={handleClose}>Strona Główna</MenuItem>
                 <MenuItem onClick={handleClose}>Drukuj Podsumowanie</MenuItem>
-                <MenuItem onClick={handleClose}>Zaloguj</MenuItem>
+                <MenuItem onClick={handleClose} component={Link} to={"/csvup" }>CSVUploader</MenuItem>
             </Menu>
         </div>
     );

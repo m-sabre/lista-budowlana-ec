@@ -17,6 +17,9 @@ import RoomList from "./components/RoomList";
 import {initializeApp} from "firebase/app";
 import {getAnalytics} from "firebase/analytics";
 import NavBar from "./components/NavBar";
+import csvUploader from "./components/CsvUploader";
+import CsvUploader from "./components/CsvUploader";
+import {projectDatabase} from "./firebase/config";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,58 +33,38 @@ function App() {
 
     //TODO - finał - działające tworzenie nowego pliku json, tworzenie raportu do pobrania.
 
-    const dispatch = useDispatch()
-    // const data = useSelector(state => state.getItems.data)
-    const data = useSelector((state) => state.data.data)
+    const data = useSelector((state) => state.data.data);
+    const error = useSelector((state) => state.data.error);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchDatabaseData())
-    }, [dispatch])
-    console.log(data, "FirebaseDB");
+        dispatch(fetchDatabaseData());
+    }, [dispatch]);
 
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
-    const [roomData, setRoomData] = useState([])
-
-
-    useEffect(() => {
-        const getData = async () => {
-            const response = await dispatch(fetchData())
-            const newData = await response
-            setRoomData(newData.projectData)
-        }
-        getData()
-
-    }, [dispatch])
+    if (!data) {
+        return <div>Loading...</div>;
+    }
 
 
     return (
         <>
-            <NavBar roomData={roomData}>
+            <NavBar roomData={data}>
                 {/*<DrawerMenu roomData={roomData}/>*/}
             </NavBar>
 
             <Outlet/>
             <Routes>
                 <Route path="/" element={<Main data={data}/>}>Main</Route>
-                <Route path="/:roomId" element={<RoomList roomData={roomData}/>}/>
+                <Route path="/csvup" element={<CsvUploader/>}></Route>
+                <Route path="/:roomId" element={<RoomList roomData={data}/>}/>
             </Routes>
         </>
     );
 }
 
-// // Your web app's Firebase configuration
-// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBUw35rlR6NWVCZW4F9fUZgV2K5T7vZCMc",
-//     authDomain: "checklista-budowlana.firebaseapp.com",
-//     projectId: "checklista-budowlana",
-//     storageBucket: "checklista-budowlana.appspot.com",
-//     messagingSenderId: "114082480269",
-//     appId: "1:114082480269:web:df0b87bf046f6a0d80e2c4",
-//     measurementId: "G-P2KKXRHMF6"
-// };
-//
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+
 export default App;

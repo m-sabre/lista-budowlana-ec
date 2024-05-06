@@ -4,9 +4,11 @@ import {menuToggle} from "../redux/actions";
 import {Link} from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
+import {useEffect, useState} from "react";
 
 
 export default function DrawerMenu({roomData}) {
+    const [uniqueRecords, setUniqueRecords] = useState([]);
     const dispatch = useDispatch()
     const drawerToggle = useSelector(state => state.menuState.open)
 
@@ -14,6 +16,28 @@ export default function DrawerMenu({roomData}) {
         console.log(value, "value");
         dispatch(menuToggle(value))
     }
+    useEffect(() => {
+        const uniqueRecordsMap = {};
+
+        roomData.csvData.forEach(obj => {
+            // Check if the roomId matches the regex pattern
+            const regexPattern = /^\d+\d+\.\d+\d+(\.\d+\d+)?$/;
+            if (regexPattern.test(obj.roomId)) {
+                uniqueRecordsMap[obj.roomId] = obj.roomName;
+            }
+        });
+
+        const uniqueRecordsArray = Object.entries(uniqueRecordsMap).map(([roomId, roomName]) => ({
+            roomId,
+            roomName
+        }));
+        console.log("uniqueArr",uniqueRecordsArray)
+        setUniqueRecords(uniqueRecordsArray);
+    }, [roomData]);
+
+
+
+
 
 
     const list = (roomData) => {
@@ -21,9 +45,8 @@ export default function DrawerMenu({roomData}) {
         return (
 
             <Box
-
                 sx={{
-                    width: 250,
+                    width: 350,
                     bgcolor: 'background.paper'
                 }}
                 role="presentation"
@@ -32,7 +55,7 @@ export default function DrawerMenu({roomData}) {
 
             >
                 <nav aria-label="main nav">
-                    {roomData.length ? (
+
 
                         <List>
                             <ListItemButton key={'main'} to={"/"}>
@@ -42,20 +65,18 @@ export default function DrawerMenu({roomData}) {
                                 <ListItemText primary="Główna"/>
                             </ListItemButton>
                             <Divider/>
-                            {roomData.map((roomData) => {
-                                return (
-                                    <ListItemButton key={roomData.roomId} component={Link} to={"/" + roomData.roomId}>
-                                        <ListItemText secondary={roomData.roomId}/>
-                                        <ListItemText primary={roomData.roomName}/>
-                                    </ListItemButton>
-                                )
-                            })}
+                            {uniqueRecords.map((record, index) => (
+                                <ListItemButton key={index} component={Link} to={"/" + record.roomId}>
+                                    <ListItemText secondary={record.roomId} />
+                                    <ListItemText primary={record.roomName} />
+                                </ListItemButton>
+                            ))}
                         </List>
-                    ) : (
-                        <p>
-                            <i>Wybierz Projekt</i>
-                        </p>
-                    )}
+
+                        {/*<p>*/}
+                        {/*    <i>Wybierz Projekt</i>*/}
+                        {/*</p>*/}
+
                 </nav>
             </Box>
         )

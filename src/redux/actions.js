@@ -1,4 +1,5 @@
-import {projectDatabase} from "../firebase/config";
+import {projectDatabase, firebaseConfig} from "../firebase/config";
+import {get} from "firebase/database";
 
 const MARK_DONE = "MARK_DONE";
 const IS_FETCHING = "IS_FETCHING";
@@ -10,6 +11,21 @@ const FETCH_DATA_FAILURE="FETCH_DATA_FAILURE"
 
 
 
+
+export const fetchData = () => {
+    return async (dispatch) => {
+        try {
+            // Fetch data from Firebase
+            const snapshot = await projectDatabase.ref(firebaseConfig.databaseURL).once('value');
+            const data = snapshot.val();
+
+            // Dispatch action with the fetched data
+            dispatch({ type: 'FETCH_DATA_SUCCESS', payload: data });
+        } catch (error) {
+            dispatch({ type: 'FETCH_DATA_FAILURE', payload: error.message });
+        }
+    };
+};
 
 
 function fetchDataSuccess(snapshot){

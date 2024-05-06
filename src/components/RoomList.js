@@ -1,29 +1,52 @@
 import RoomItems from "./RoomItems";
 import {useSelector} from "react-redux";
 import {useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 export default function RoomList({roomData}) {
+    const { roomId } = useParams();
+    const [data, setData] = useState([])
+    const [isLoading, setIsLoading] = useState(true);
+    const [uniqueSymbols,setUniqueSymbols] =useState([]);
+    const filteredRoom = roomData.csvData.filter(obj => obj.roomId === roomId);
 
-    const data = useSelector(state => state.getItems.data)
-    console.log(data, "data RoomList");
-    const {roomId} = useParams()
+    useEffect(() => {
 
-        const newData = data[0].projectData //TODO to na pewno można zrobić zgrabniej, możę use state?
-        console.log(newData, "NewData");
-        const filteredRoom = newData.filter(({...data}) => data.roomId === roomId) //TODO  czy nie powinno być w if albo use Effect żeby sie zabezpieczyć przed pustym data? - tylko czemu nie działa  nie widzi zmiennej w jsx
-        console.log(filteredRoom);
+        console.log(filteredRoom,"filtered room")
+        setData(filteredRoom)
+        setIsLoading(false);
+    }, [ roomData, roomId]);
+
+    useEffect(() => {
+        const uniqueSymbolsMap ={};
+        data.forEach(obj=>{
+            uniqueSymbolsMap[obj.elSymbol]=obj.elName;
+        })
+
+        const uniqueSymbolsArray = Object.entries(uniqueSymbolsMap).map(([elSymbol,elName])=>({
+            elSymbol,
+            elName
+        }))
+        setUniqueSymbols(uniqueSymbolsArray)
+    }, [data]);
+
+
 
 
     return (
         <>
             <p>ID: {roomId}</p>
-            {filteredRoom.map(({...roomData}) => {
+            { isLoading ? (<p>Loading...</p>):(
+            uniqueSymbols.map(({...items}, index) => {
+
                 return (
-                    <ul key={roomData.roomId}>
-                        <RoomItems key={roomData.roomId} roomData={roomData}/>
+                    <ul key={index}>
+                        {/*<RoomItems key={index} data={data}/>*/}
+                        {items.elSymbol} , {items.elName}
                     </ul>
                 )
-            })}
+            })
+)}
         </>
 
     )
